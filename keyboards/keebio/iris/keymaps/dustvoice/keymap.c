@@ -3,6 +3,7 @@
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
+    // Default base layer
     [0] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
@@ -17,6 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
+    // First function layer, with some special characters, arrow keys and further layer switching
     [1] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_GRV,  TO(5),   TO(4),   TO(3),   TO(6),   TO(2),                              TO(2),   TO(6),   TO(3),   TO(4),   KC_MINS, KC_EQL,
@@ -31,6 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
+    // Mouse layer, with F1-F10
     [2] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_BSPC,
@@ -45,6 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
+    // Numpad layer, with F11-F15
     [3] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_ESC,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                             KC_NLCK, KC_PSLS, KC_PAST, KC_PMNS, KC_NO,   KC_BSPC,
@@ -59,6 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
+    // Misc. layer
     [4] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_ESC,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BSPC,
@@ -73,6 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
+    // Gaming layer
     [5] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
@@ -87,6 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
+    // Mirror of the first function layer, to be "locked" and to serve as a function layer for all other layers
     [6] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_GRV,  TO(5),   TO(4),   TO(3),   TO(0),   TO(2),                              TO(2),   TO(0),   TO(3),   TO(4),   KC_MINS, KC_EQL,
