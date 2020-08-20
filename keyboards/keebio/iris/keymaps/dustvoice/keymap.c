@@ -14,63 +14,63 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    MO(1),            MO(1),   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
-                                  // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
     [1] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_GRV,  TO(5),   TO(6),   TO(3),   TO(2),   TO(4),                              TO(4),   TO(2),   TO(3),   TO(6),   KC_MINS, KC_EQL,
+       KC_GRV,  TO(5),   TO(4),   TO(3),   TO(6),   TO(2),                              TO(2),   TO(6),   TO(3),   TO(4),   KC_MINS, KC_EQL,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_PGUP, KC_UP,   KC_PGDN, KC_NO,   KC_NO,                              KC_INS,  KC_PSCR, KC_SLCK, KC_PAUS, KC_LBRC, KC_RBRC,
+       KC_TAB,  KC_NO,   KC_PAUS, KC_SLCK, KC_PSCR, KC_INS,                             KC_INS,  KC_PSCR, KC_SLCK, KC_PAUS, KC_LBRC, KC_RBRC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_HOME, KC_END,                             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_DEL,
+       KC_NO,   KC_NO,   KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_DEL,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
-                                  // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
     [2] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_GRV,  TO(5),   TO(6),   TO(3),   TO(2),   TO(4),                              TO(4),   TO(2),   TO(3),   TO(6),   KC_MINS, KC_EQL,
+       KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_BSPC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_PGUP, KC_UP,   KC_PGDN, KC_NO,   KC_NO,                              KC_INS,  KC_PSCR, KC_SLCK, KC_PAUS, KC_LBRC, KC_RBRC,
+       KC_TAB,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_HOME, KC_END,                             KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_DEL,
+       KC_NO,   KC_NO,   KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,                            KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO,   KC_NO,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   TO(0),            TO(0),   KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R, MO(6),            MO(6),   KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
-                                  // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                      KC_BTN3, KC_BTN2, KC_BTN1,                   KC_BTN1, KC_BTN2, KC_BTN3
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
     [3] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_ESC,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NLCK, KC_PSLS, KC_PAST, KC_PMNS, KC_NO,   KC_BSPC,
+       KC_ESC,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                             KC_NLCK, KC_PSLS, KC_PAST, KC_PMNS, KC_NO,   KC_BSPC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_PGUP, KC_UP,   KC_PGDN, KC_NO,   KC_NO,                              KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_NO,   KC_NO,
+       KC_TAB,  KC_NO,   KC_PAUS, KC_SLCK, KC_PSCR, KC_INS,                             KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_NO,   KC_NO,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO,                              KC_P4,   KC_P5,   KC_P6,   KC_PPLS, KC_COMM, KC_DOT,
+       KC_NO,   KC_NO,   KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,                            KC_P4,   KC_P5,   KC_P6,   KC_PPLS, KC_COMM, KC_DOT,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_HOME, KC_INS,  KC_END,  KC_NO,   KC_NO,   TO(0),            TO(0),   KC_P1,   KC_P2,   KC_P3,   KC_ENT,  KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  MO(6),            MO(6),   KC_P1,   KC_P2,   KC_P3,   KC_ENT,  KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_P0,   KC_PDOT
-                                  // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
     [4] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_BSPC,
+       KC_ESC,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BSPC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_WH_U, KC_MS_U, KC_WH_D, KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_TAB,  RESET,   KC_NO,   KC_NO,   KC_NO,   RGB_TOG,                            RGB_TOG, KC_NO,   KC_NO,   KC_NO,   RESET,   NK_ON,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_NO,   KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_L, KC_WH_R,                            KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO,   KC_NO,
+       KC_NO,   RESET,   KC_NO,   KC_NO,   KC_NO,   RGB_TOG,                            RGB_TOG, KC_NO,   KC_NO,   KC_NO,   RESET,   NK_OFF,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   TO(0),            TO(0),   KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   MO(6),            MO(6),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_BTN3, KC_BTN2, KC_BTN1,                   KC_BTN1, KC_BTN2, KC_BTN3
-                                  // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
     [5] = LAYOUT(
@@ -81,24 +81,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
        KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    TO(0),            TO(0),   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    MO(6),            MO(6),   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       KC_LCTL, KC_LALT, KC_SPC,                    KC_SPC,  KC_RALT, KC_RCTL
-                                  // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
     [6] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_ESC,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                             RGB_M_P, RGB_M_B, KC_NO,   KC_NO,   KC_NO,   KC_BSPC,
+       KC_GRV,  TO(5),   TO(4),   TO(3),   TO(0),   TO(2),                              TO(2),   TO(0),   TO(3),   TO(4),   KC_MINS, KC_EQL,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  RESET,   RGB_SPI, RGB_VAI, RGB_SAI, RGB_HUI,                            KC_NO,   KC_NO,   KC_NO,   KC_NO,   RESET,   NK_ON,
+       KC_TAB,  KC_NO,   KC_PAUS, KC_SLCK, KC_PSCR, KC_INS,                             KC_INS,  KC_PSCR, KC_SLCK, KC_PAUS, KC_LBRC, KC_RBRC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_NO,   RESET,   RGB_SPD, RGB_VAD, RGB_SAD, RGB_HUD,                            RGB_TOG, RGB_RMOD,RGB_MOD, KC_NO,   RESET,   NK_OFF,
+       KC_NO,   KC_NO,   KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_DEL,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   TO(0),            TO(0),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
-                                  // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     )
 };
 // clang-format on
@@ -130,19 +130,19 @@ void set_led_depend_state(uint8_t layer) {
             break;
         case 1:
             rgblight_mode(1);
-            rgblight_sethsv(hue, 180, val);
+            rgblight_sethsv(hue, 0, val);
             break;
         case 2:
             rgblight_mode(1);
-            rgblight_sethsv(hue, 180, val);
+            rgblight_sethsv(130, sat, val);
             break;
         case 3:
             rgblight_mode(1);
-            rgblight_sethsv(hue, 60, val);
+            rgblight_sethsv(175, sat, val);
             break;
         case 4:
             rgblight_mode(1);
-            rgblight_sethsv(180, sat, val);
+            rgblight_sethsv(45, sat, val);
             break;
         case 5:
             rgblight_mode(1);
@@ -150,7 +150,7 @@ void set_led_depend_state(uint8_t layer) {
             break;
         case 6:
             rgblight_mode(1);
-            rgblight_sethsv(120, sat, val);
+            rgblight_sethsv(hue, 0, val);
             break;
         default:
             rgblight_mode(1);
