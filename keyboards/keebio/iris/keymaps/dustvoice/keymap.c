@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
-    // First function layer, with some special characters, arrow keys and further layer switching
+    // First function layer (temporary), with some special characters, arrow keys and further layer switching
     [1] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        KC_GRV,  TO(5),   TO(4),   TO(3),   TO(6),   TO(2),                              TO(2),   TO(6),   TO(3),   TO(4),   KC_MINS, KC_EQL,
@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
        KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
+                                      KC_LCTL, KC_LALT, KC_SPC,                    KC_ENT,  KC_RALT, KC_RCTL
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
