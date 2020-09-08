@@ -1,7 +1,7 @@
 # 分割キーボード
 
 <!---
-  original document:0.9.5:docs/feature_split_keyboard.md
+  original document:0.9.43:docs/feature_split_keyboard.md
   git diff 0.9.43 HEAD -- docs/feature_split_keyboard.md | cat
 -->
 
@@ -20,12 +20,12 @@ QMK ファームウェアには、任意のキーボードで使用可能な一�
 
 | Transport | AVR | ARM |
 |------------------------------|--------------------|--------------------|
-| ['serial'](serial_driver.md) | :heavy_check_mark: | :white_check_mark: <sup>1</sup> |
+| ['serial'](ja/serial_driver.md) | :heavy_check_mark: | :white_check_mark: <sup>1</sup> |
 | I2C | :heavy_check_mark: |  |
 
 注意:
 
-1. ハードウェアとソフトウェアの両方の制限は、[ドライバーのドキュメント](serial_driver.md)の中で説明されます。
+1. ハードウェアとソフトウェアの両方の制限は、[ドライバーのドキュメント](ja/serial_driver.md)の中で説明されます。
 
 ## ハードウェア設定
 
