@@ -4,7 +4,7 @@
 	branch = master
 [submodule "lib/chibios-contrib"]
 	path = lib/chibios-contrib
-	url = https://github.com/OpenAnnePro/ChibiOS-Contrib
+	url = https://github.com/OpenDucky/ChibiOS-Contrib
 	branch = master
 [submodule "lib/ugfx"]
 	path = lib/ugfx
