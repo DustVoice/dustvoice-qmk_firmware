@@ -1,30 +1,30 @@
+#include "annepro2.h"
+
+#include "annepro2_ble.h"
 #include "ch.h"
 #include "hal.h"
-#include "annepro2.h"
-#include "annepro2_ble.h"
-#include "spi_master.h"
 #include "qmk_ap2_led.h"
+#include "spi_master.h"
 
 static const SerialConfig ledUartConfig = {
-  .speed = 115200,
+    .speed = 115200,
 };
 
 static const SerialConfig bleUartConfig = {
-  .speed = 115200,
+    .speed = 115200,
 };
 
-static uint8_t ledMcuWakeup[11] = {
-    0x7b, 0x10, 0x43, 0x10, 0x03, 0x00, 0x00, 0x7d, 0x02, 0x01, 0x02
-};
+static uint8_t ledMcuWakeup[11] = {0x7b, 0x10, 0x43, 0x10, 0x03, 0x00, 0x00, 0x7d, 0x02, 0x01, 0x02};
 
-
+// clang-format off
 uint16_t annepro2LedMatrix[MATRIX_ROWS * MATRIX_COLS] = {
-  0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-  0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-  0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-  0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-  0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
+// clang-format on
 
 void OVERRIDE keyboard_pre_init_kb(void) {
 #if HAL_USE_SPI == TRUE
@@ -41,8 +41,7 @@ void OVERRIDE keyboard_post_init_kb(void) {
     wait_ms(15);
 
     // loop to clear out receive buffer from shine wakeup
-    while(!sdGetWouldBlock(&SD0))
-        sdGet(&SD0);
+    while (!sdGetWouldBlock(&SD0)) sdGet(&SD0);
 
     // Start BLE UART
     sdStart(&SD1, &bleUartConfig);
@@ -55,14 +54,12 @@ void OVERRIDE keyboard_post_init_kb(void) {
     keyboard_post_init_user();
 }
 
-void OVERRIDE matrix_init_kb(void) {
-    matrix_init_user();
-}
+void OVERRIDE matrix_init_kb(void) { matrix_init_user(); }
 
 /*!
  * @returns false   processing for this keycode has been completed.
  */
-bool OVERRIDE process_record_kb(uint16_t keycode, keyrecord_t *record) {
+bool OVERRIDE process_record_kb(uint16_t keycode, keyrecord_t* record) {
     if (record->event.pressed) {
         switch (keycode) {
             case KC_AP2_BT1:
@@ -102,9 +99,8 @@ bool OVERRIDE process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 break;
 
             case KC_AP_LED_PREV_PROFILE:
-               annepro2LedPrevProfile();
+                annepro2LedPrevProfile();
                 break;
-
 
             default:
                 break;

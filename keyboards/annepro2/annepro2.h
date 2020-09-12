@@ -31,7 +31,7 @@ enum AP2KeyCodes {
     KC_AP2_BT4,
     KC_AP2_BT_UNPAIR,
     KC_AP2_USB,
-    AP2_SAFE_RANGE
+    AP2_SAFE_RANGE,
 };
 
 enum custom_keys {

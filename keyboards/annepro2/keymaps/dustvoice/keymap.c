@@ -71,11 +71,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_NO,   KC_NO,    KC_BSPC,
     //├────────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────┴───┬────────┤
           KC_TAB,    KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,  NK_ON,   NK_OFF,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    //├────────────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴┬───────┴────────┤
-          EEP_RST,    RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   RESET,   KC_NO,      EEP_RST,
-    //├────────┬────┴─────┬──┴───────┬┴────────┴─┬──────┼────────┴─────┬──┴────────┴─┬──────┴────────┴─┬──────┴───┬────┴──────┬─────────┤
-       KC_LSFT, KC_AP2_BT1,KC_AP2_BT2,KC_AP2_BT3, KC_NO, KC_AP_LED_OFF, KC_AP_LED_ON, KC_NO, KC_AP2_BT3,KC_AP2_BT2,KC_AP2_BT1,  KC_RSFT,
-    //├────────┼────────┬─┴──────┬───┴───────────┴──────┴──────────────┴─────────────┴──────┴───────┬──┴─────┬────┴───┬───────┴┬────────┤
+    //├────────┬───┴──┬─────┴─────┬──┴───┬────┴────────┴┬───────┴─────┬──┴────────┴─┬──────┴───────┬┴─────┬──┴────────┼──────┬─┴────┬───┴────┐
+       EEP_RST, RESET, KC_AP2_USB, KC_NO, KC_AP_LED_OFF, KC_AP_LED_ON, KC_AP_LED_ON, KC_AP_LED_OFF, KC_NO, KC_AP2_USB, RESET, KC_NO, EEP_RST,
+    //├────────┼──────┴────┬──────┴────┬─┴─────────┬────┴──────┬──────┴──────────┬──┴──────────────┼──────┴────┬──────┴────┬─┴──────┴──┬─────┴─────┬────────┐
+       KC_LSFT, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, KC_AP2_BT4, KC_AP2_BT_UNPAIR, KC_AP2_BT_UNPAIR, KC_AP2_BT4, KC_AP2_BT3, KC_AP2_BT2, KC_AP2_BT1, KC_RSFT,
+    //├────────┼────────┬──┴─────┬─────┴───────────┴───────────┴─────────────────┴─────────────────┴┬────────┬─┴──────┬────┴───┬───────┴┬──────────┴────────┘
        KC_LCTL, KC_LALT,  MO(6),                               KC_SPC,                                MO(6),  KC_RALT, KC_RCTL, KC_LGUI
     //└────────┴────────┴────────┴──────────────────────────────────────────────────────────────────┴────────┴────────┴────────┴────────┘
     ),
@@ -117,4 +117,68 @@ void matrix_init_user(void) {}
 
 void matrix_scan_user(void) {}
 
-layer_state_t layer_state_set_user(layer_state_t layer) { return layer; }
+bool is_caps_set = false;
+
+bool led_is_rdy = false;
+
+void enableLayerColor(uint8_t hue, uint8_t sat, uint8_t val) {
+    if (is_caps_set) {
+        annepro2LedSetHSV(0xFF, 0xFF, val);
+    } else {
+        annepro2LedSetHSV(hue, sat, val);
+    }
+}
+
+void keyboard_post_init_user(void) {
+    annepro2LedEnable();
+    led_is_rdy = true;
+}
+
+void set_led_depend_state(uint8_t layer) {
+    switch (layer) {
+        case 0:
+            enableLayerColor(215, 0xFF, 0xFF);
+            break;
+        case 1:
+            enableLayerColor(215, 0x00, 0xFF);
+            break;
+        case 2:
+            enableLayerColor(130, 0xFF, 0xFF);
+            break;
+        case 3:
+            enableLayerColor(175, 0xFF, 0xFF);
+            break;
+        case 4:
+            enableLayerColor(45, 0xFF, 0xFF);
+            break;
+        case 5:
+            enableLayerColor(245, 0xFF, 0xFF);
+            break;
+        case 6:
+            enableLayerColor(215, 0x00, 0xFF);
+            break;
+        default:
+            enableLayerColor(215, 0xFF, 0xFF);
+            break;
+    }
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    if (led_is_rdy) {
+        uint8_t layer = biton32(state);
+
+        set_led_depend_state(layer);
+    }
+
+    return state;
+}
+
+void led_set_user(uint8_t usb_led) {
+    if (usb_led & (1 << USB_LED_CAPS_LOCK) && biton32(layer_state) == 0) {
+        is_caps_set = true;
+        enableLayerColor(0xFF, 0xFF, 0xFF);
+    } else {
+        is_caps_set = false;
+        layer_state_set_user(layer_state);
+    }
+}
