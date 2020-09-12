@@ -1,5 +1,7 @@
 #pragma once
 
+#define FORCE_NKRO
+
 #define TAPPING_TOGGLE 2
 
 #define MOUSEKEY_INTERVAL 16

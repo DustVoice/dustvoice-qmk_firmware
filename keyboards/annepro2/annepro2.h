@@ -19,6 +19,7 @@
 #include "annepro2.h"
 #include "quantum.h"
 
+// clang-format off
 #define OVERRIDE __attribute__ ((noinline))
 
 extern uint16_t annepro2LedMatrix[MATRIX_ROWS * MATRIX_COLS];
@@ -30,7 +31,7 @@ enum AP2KeyCodes {
     KC_AP2_BT4,
     KC_AP2_BT_UNPAIR,
     KC_AP2_USB,
-    AP2_SAFE_RANGE,
+    AP2_SAFE_RANGE
 };
 
 enum custom_keys {
@@ -39,3 +40,4 @@ enum custom_keys {
     KC_AP_LED_NEXT_PROFILE,
     KC_AP_LED_PREV_PROFILE
 };
+// clang-format on
