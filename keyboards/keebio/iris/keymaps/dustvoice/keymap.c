@@ -14,35 +14,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    MO(1),            MO(1),   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
-                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
-    ),
-
-    // First function layer (temporary), with some special characters, arrow keys and further layer switching
-    [1] = LAYOUT(
-    //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_GRV,  TO(5),   TO(4),   TO(3),   TO(6),   TO(2),                              TO(2),   TO(6),   TO(3),   TO(4),   KC_MINS, KC_EQL,
-    //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_NO,   KC_PAUS, KC_SLCK, KC_PSCR, KC_INS,                             KC_INS,  KC_PSCR, KC_SLCK, KC_PAUS, KC_LBRC, KC_RBRC,
-    //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_F13,  KC_NO,   KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_DEL,
-    //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_RSFT,
-    //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       KC_LCTL, KC_LALT, KC_SPC,                    KC_ENT,  KC_RALT, KC_RCTL
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
-    // Mouse layer
+    // Function layer (hold), with special characters, arrow keys, F-keys and further layer switching
+    [1] = LAYOUT(
+    //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
+       KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_MINS, KC_EQL,
+    //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+       KC_TAB,  KC_NO,   TO(3),   TO(2),   TO(5),   TO(4),                              TO(4),   TO(5),   TO(2),   TO(3),   KC_LBRC, KC_RBRC,
+    //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+       KC_F13,  KC_NO,   KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_DEL,
+    //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+       KC_LSFT, KC_INS,  KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_INS,  KC_RSFT,
+    //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
+                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
+                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
+    ),
+
+    // Mouse layer, with F1-F15 keys
     [2] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_ESC,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BSPC,
+       KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_BSPC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_TAB,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                             KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
        KC_F13,  KC_NO,   KC_MS_L, KC_MS_U, KC_MS_D, KC_MS_R,                            KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO,   KC_NO,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R, MO(6),            MO(6),   KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_WH_L, KC_WH_U, KC_WH_D, KC_WH_R, MO(5),            MO(5),   KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       KC_BTN3, KC_BTN2, KC_BTN1,                   KC_BTN1, KC_BTN2, KC_BTN3
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -57,62 +57,47 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
        KC_F13,  KC_NO,   KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,                            KC_P4,   KC_P5,   KC_P6,   KC_PPLS, KC_COMM, KC_DOT,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  MO(6),            MO(6),   KC_P1,   KC_P2,   KC_P3,   KC_ENT,  KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  MO(5),            MO(5),   KC_P1,   KC_P2,   KC_P3,   KC_ENT,  KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_P0,   KC_PDOT
+                                      KC_LCTL, KC_LALT, KC_SPC,                    KC_ENT,  KC_P0,   KC_PDOT
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
-    // Misc. layer, with F1-F15 keys
+    // Admin layer
     [4] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_BSPC,
+       KC_ESC,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BSPC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                             NK_ON,   NK_OFF,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
+       KC_TAB,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                              NK_ON,   NK_OFF,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       EEP_RST, RESET,   RGB_VAI, RGB_SAI, RGB_HUI, RGB_TOG,                            RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RESET,   EEP_RST,
+       RESET,   EEP_RST, RGB_VAI, RGB_SAI, RGB_HUI, RGB_TOG,                            RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, EEP_RST, RESET,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   MO(6),            MO(6),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
+       KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   MO(5),            MO(5),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
+                                      KC_LCTL, KC_LALT, KC_SPC,                    KC_ENT,  KC_RALT, KC_RCTL
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
-    // Gaming layer
+    // Mirror of function layer (toggle) and to serve as a function layer for other layers
     [5] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+       KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                              KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_MINS, KC_EQL,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-    //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_F13,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
-    //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    MO(6),            MO(6),   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_LCTL, KC_LALT, KC_SPC,                    KC_SPC,  KC_RALT, KC_RCTL
-                                   //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
-    ),
-
-    // Mirror of the first function layer, to be "locked" and to serve as a function layer for all other layers
-    [6] = LAYOUT(
-    //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-       KC_GRV,  TO(5),   TO(4),   TO(3),   TO(0),   TO(2),                              TO(2),   TO(0),   TO(3),   TO(4),   KC_MINS, KC_EQL,
-    //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_TAB,  KC_NO,   KC_PAUS, KC_SLCK, KC_PSCR, KC_INS,                             KC_INS,  KC_PSCR, KC_SLCK, KC_PAUS, KC_LBRC, KC_RBRC,
+       KC_TAB,  KC_NO,   TO(3),   TO(2),   TO(0),   TO(4),                              TO(4),   TO(0),   TO(2),   TO(3),   KC_LBRC, KC_RBRC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
        KC_F13,  KC_NO,   KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,                            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_DEL,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-       KC_LSFT, KC_NO,   KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,   KC_RSFT,
+       KC_LSFT, KC_INS,  KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_TRNS,          KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_INS,   KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                      KC_LCTL, KC_LALT, KC_ENT,                    KC_SPC,  KC_RALT, KC_RCTL
+                                      KC_LCTL, KC_LALT, KC_SPC,                    KC_ENT,  KC_RALT, KC_RCTL
                                    //└────────┴────────┴────────┘                 └────────┴────────┴────────┘
     )
 };
 // clang-format on
 
-uint16_t hue = 215;
+uint16_t hue = 245;
 uint16_t sat = 255;
-uint16_t val;
+uint16_t val = 255;
 
 void get_hsv(void) {
     hue = rgblight_get_hue();
@@ -133,19 +118,19 @@ void set_led_depend_state(uint8_t layer) {
     switch (layer) {
         case 0:
             rgblight_mode(1);
-            rgblight_sethsv(hue, sat, val);
+            rgblight_sethsv(245, sat, val);
             break;
         case 1:
             rgblight_mode(1);
-            rgblight_sethsv(hue, 0, val);
+            rgblight_sethsv(215, sat, val);
             break;
         case 2:
             rgblight_mode(1);
-            rgblight_sethsv(130, sat, val);
+            rgblight_sethsv(215, 0, val);
             break;
         case 3:
             rgblight_mode(1);
-            rgblight_sethsv(175, sat, val);
+            rgblight_sethsv(130, sat, val);
             break;
         case 4:
             rgblight_mode(1);
@@ -153,15 +138,11 @@ void set_led_depend_state(uint8_t layer) {
             break;
         case 5:
             rgblight_mode(1);
-            rgblight_sethsv(245, sat, val);
-            break;
-        case 6:
-            rgblight_mode(1);
-            rgblight_sethsv(hue, 0, val);
+            rgblight_sethsv(215, sat, val);
             break;
         default:
             rgblight_mode(1);
-            rgblight_sethsv(hue, sat, val);
+            rgblight_sethsv(245, sat, val);
             break;
     }
 }
