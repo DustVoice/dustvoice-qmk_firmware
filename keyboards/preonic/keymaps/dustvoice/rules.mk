@@ -15,4 +15,6 @@ SLEEP_LED_ENABLE = no    # Breathing sleep LED during USB suspend
 
 ENCODER_ENABLE = no
 
+SWAP_HANDS_ENABLE = yes
+
 LAYOUTS = ortho_5x12
