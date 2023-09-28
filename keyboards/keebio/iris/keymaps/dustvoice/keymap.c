@@ -213,6 +213,10 @@ void set_led_depend_state(uint8_t layer) {
             rgblight_mode(1);
             rgblight_sethsv(45, sat, val);
             break;
+        case FN:
+            rgblight_mode(1);
+            rgblight_sethsv(215, sat, val);
+            break;
         case MFN:
             rgblight_mode(1);
             rgblight_sethsv(215, sat, val);
